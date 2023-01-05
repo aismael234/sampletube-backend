@@ -1,5 +1,7 @@
 const { builtinModules } = require("module");
 const mongoose = require("mongoose");
+// sanitizes user input (didn't look too deep into this. hopefully it works :P)
+mongoose.set("sanitizeFilter", true);
 
 const connectDB = async () => {
   try {

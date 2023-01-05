@@ -15,7 +15,7 @@ const videoSchema = mongoose.Schema({
     required: true,
   },
   upload_date: {
-    type: String, // convert yyyy-mm-dd to date?
+    type: String, // convert yyyymmdd to date?
     required: true,
   },
   title: {
