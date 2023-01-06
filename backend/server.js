@@ -4,7 +4,7 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 
 connectDB();
 
@@ -53,7 +53,6 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true);
   return next();
 });
-app.use(cors(corsOptions));
 
 app.use("/api/videos", require("./routes/videoRoutes"));
 
