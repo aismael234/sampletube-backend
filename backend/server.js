@@ -13,11 +13,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(
-  cors({
-    origin: "http://127.0.0.1:5173",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://127.0.0.1:5173",
+//   })
+// );
 
 app.use("/api/videos", require("./routes/videoRoutes"));
 

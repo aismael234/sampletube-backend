@@ -14,7 +14,7 @@ const getVideo = asyncHandler(async (req, res) => {
   let andArray = [];
 
   // if no queries exist. Usually upon intial page load.
-  if (queryData != false) {
+  if (queryData == false) {
     const video = await Video.aggregate([{ $sample: { size: 1 } }]);
 
     res.status(200).json(video);
