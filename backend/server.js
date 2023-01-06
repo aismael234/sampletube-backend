@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(
   cors({
-    origin: "http://elaborate-croissant-cf4a17.netlify.app",
+    origin: "http://sample.tube",
   })
 );
 
