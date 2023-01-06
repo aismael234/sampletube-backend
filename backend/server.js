@@ -21,9 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // Set up a whitelist and check against it:
 var whitelist = [
-  "http://sample.tube",
-  "http://www.sample.tube",
-  "http://sampletube.netlify.app",
+  "https://sample.tube",
+  "https://www.sample.tube",
+  "https://sampletube.netlify.app",
 ];
 var corsOptions = {
   origin: function (origin, callback) {
