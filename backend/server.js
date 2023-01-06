@@ -42,6 +42,7 @@ app.use((req, res, next) => {
     "http://sample.tube",
     "http://www.sample.tube",
     "http://sampletube.netlify.app",
+    "http://localhost:5173",
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
