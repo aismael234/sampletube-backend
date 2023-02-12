@@ -21,11 +21,11 @@ const getVideo = asyncHandler(async (req, res) => {
   } else {
     // adds all non-empty values to an array to be later used into a query
     // "false" condition accounts for "", null, and undefined (kinda lazy/irresponsible, I know.).
-    if (queryData.minimum_views != false)
+    if (queryData.minimum_views != null)
       andArray.push({
         view_count: { $gte: parseInt(req.query.minimum_views, 10) },
       });
-    if (queryData.maximum_views != false)
+    if (queryData.maximum_views != null)
       andArray.push({
         view_count: { $lte: parseInt(req.query.maximum_views, 10) },
       });
