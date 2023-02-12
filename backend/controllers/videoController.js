@@ -20,28 +20,28 @@ const getVideo = asyncHandler(async (req, res) => {
     res.status(200).json(video);
   } else {
     // adds all non-empty values to an array to be later used into a query
-    // "false" condition accounts for "", null, and undefined (kinda lazy/irresponsible, I know.).
-    if (queryData.minimum_views != null)
+    // !="" condition doesn't account for null and undefined (kinda lazy/irresponsible, I know.).
+    if (queryData.minimum_views != "")
       andArray.push({
         view_count: { $gte: parseInt(req.query.minimum_views, 10) },
       });
-    if (queryData.maximum_views != null)
+    if (queryData.maximum_views != "")
       andArray.push({
         view_count: { $lte: parseInt(req.query.maximum_views, 10) },
       });
-    if (queryData.date_from != false)
+    if (queryData.date_from != "")
       andArray.push({
         upload_date: {
           $gte: req.query.date_from.replaceAll("-", ""),
         },
       });
-    if (queryData.date_to != false)
+    if (queryData.date_to != "")
       andArray.push({
         upload_date: {
           $lte: req.query.date_to.replaceAll("-", ""),
         },
       });
-    if (queryData.title != false)
+    if (queryData.title != "")
       andArray.push({
         title: { $regex: req.query.keywords, $options: "i" },
       });
